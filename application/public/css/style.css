@@ -9,9 +9,41 @@ body {
   margin: 0;
 }
 
+nav ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aliceblue;
+}
+
+header{
+  background-color:aliceblue;
+  padding: 1px;
+}
+
+li a{
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+.active{
+  background-color: aqua;
+}
+
+a{
+  display: block;
+  padding: 10px;
+}
+
 .site-footer{
   color: rgb(8, 8, 8);
   background-color: rgb(92, 161, 138);
   text-align: center;
   padding: 12px;
+  box-shadow: 0 50vh 0 50vh rgb(92, 161, 138);
 }
