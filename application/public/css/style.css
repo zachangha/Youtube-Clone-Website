@@ -84,6 +84,7 @@ input[type = "password"]{
   font-weight: bold;
 }
 
-p{
+main p{
   align-content: center;
+  text-align: center;
 }
