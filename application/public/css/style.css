@@ -18,6 +18,10 @@ header{
   padding-top: 1px;
 }
 
+h1{
+  padding-left: 10px;
+}
+
 body {
   background-color: #5cdb95;
   margin: 0;
@@ -35,11 +39,11 @@ li a{
 }
 
 a{
-  display: block;
+  display: inline;
   padding: 10px
 }
 
-.site-footer{
+footer{
   color: rgb(8, 8, 8);
   background-color: #379683;
   text-align: center;
@@ -66,4 +70,16 @@ input[type = "text"]{
   border-bottom: 2px #05386b;
   box-shadow: 0 0 10px 2px rgb(8, 8, 8);
   border-radius: 10px;
+}
+
+input[type = "password"]{
+  width: 500px;
+  border: 0px;
+  border-bottom: 2px #05386b;
+  box-shadow: 0 0 10px 2px rgb(8, 8, 8);
+  border-radius: 10px;
+}
+
+.checkboxes {
+  font-weight: bold;
 }
