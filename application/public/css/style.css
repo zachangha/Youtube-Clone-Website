@@ -5,12 +5,18 @@ html{
   color: white;
 }
 
-nav ul{
+nav ul.navbar{
   list-style: none;
   padding-left: 10px;
   padding-right: 10px;
   display: flex;
   justify-content: space-between;
+}
+
+li a{
+  display: block;
+  text-decoration: none;
+  color: white;
 }
 
 header{
@@ -29,13 +35,6 @@ body {
 
 main{
   padding-left: 10px;
-}
-
-li a{
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  color: white;
 }
 
 a{
@@ -87,4 +86,12 @@ input[type = "password"]{
 .mainpagecontent{
   align-content: center;
   text-align: center;
+}
+
+.profileposts{
+  justify-content: left;
+}
+
+ul.profileposts{
+  
 }
