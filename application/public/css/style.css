@@ -20,7 +20,7 @@ li a{
 }
 
 header{
-  background-color:#05386b;
+  background-color:#4C908D;
   padding-top: 1px;
 }
 
@@ -29,12 +29,12 @@ h1{
 }
 
 body {
-  background-color: #5cdb95;
+  background-color: #68c065;
   margin: 0;
 }
 
 main{
-  padding-left: 10px;
+  padding-left: 10px
 }
 
 a{
@@ -43,15 +43,15 @@ a{
 }
 
 footer{
-  color: rgb(8, 8, 8);
-  background-color: #379683;
+  color: white;
+  background-color: #525252;
   text-align: center;
   padding: 12px;
-  box-shadow: 0 50vh 0 50vh #379683;
+  box-shadow: 0 50vh 0 50vh #525252;
 }
 
 .active{
-  background-color: #5cdb95;
+  background-color: #68c065;
 }
 
 form{
@@ -92,6 +92,24 @@ input[type = "password"]{
   justify-content: left;
 }
 
-ul.profileposts{
-  
+img.bg_image{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  filter: blur(4px);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.wrapper{
+  display: grid;
+  grid-template-columns: 20%, 60%, 20%;
+  grid-template-areas: "left", "center", "right";
+}
+
+.content{
+  grid-area: center;
 }
