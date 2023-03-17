@@ -83,11 +83,6 @@ input[type = "password"]{
   font-weight: bold;
 }
 
-.mainpagecontent{
-  align-content: center;
-  text-align: center;
-}
-
 .profileposts{
   justify-content: left;
 }
