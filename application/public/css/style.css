@@ -115,3 +115,17 @@ h2{
 .home_tree{
   height: 300px;
 }
+
+.box{
+  margin: auto;
+  width: 500px;
+  height: 200px;
+  color: black;
+  border: 1px solid black;
+  background-color: white;
+  margin-bottom: 10px;
+  }
+
+  section{
+    text-align: center;
+  }
