@@ -16,7 +16,8 @@ document.getElementById("username").addEventListener("input", function(ev) {
 document.getElementById("password").addEventListener("input", function(ev){
     let userIput = ev.currentTarget;
     let password = userIput.value;
-    if (password.length >= 8 ){
+    var specialChars = /[/*-+[!@#$^&~]/;
+    if (password.length >= 8 && password.match(/[A-Z]/) && password.match(/[0-9]/) /*&& specialChars.test(password)*/){
         userIput.classList.add("valid_text")
         userIput.classList.remove("invalid_text")
     }
