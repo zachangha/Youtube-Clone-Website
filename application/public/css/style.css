@@ -201,3 +201,11 @@ iframe{
   width: 700px;
   height: 300px;
 }
+
+.valid_text{
+  outline: solid rgb(0, 255, 0);
+}
+
+.invalid_text{
+  outline: solid red;
+}
