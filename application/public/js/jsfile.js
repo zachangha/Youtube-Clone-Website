@@ -16,8 +16,21 @@ document.getElementById("username").addEventListener("input", function(ev) {
 document.getElementById("password").addEventListener("input", function(ev){
     let userIput = ev.currentTarget;
     let password = userIput.value;
-    var specialChars = /[/*-+[!@#$^&~]/;
-    if (password.length >= 8 && password.match(/[A-Z]/) && password.match(/[0-9]/) /*&& specialChars.test(password)*/){
+    if (password.length >= 8 && password.match(/[A-Z]/) && password.match(/[0-9]/) && password.match(/[/*-+!@#$^&~[]/)){
+        userIput.classList.add("valid_text")
+        userIput.classList.remove("invalid_text")
+    }
+    else{
+        userIput.classList.add("invalid_text")
+        userIput.classList.remove("valid_text")
+    } 
+});
+
+document.getElementById("confirm_password").addEventListener("input", function(ev){
+    let userIput = ev.currentTarget;
+    var confirm_password = userIput.value;
+    var password = document.getElementById("password").value;
+    if (confirm_password == password){
         userIput.classList.add("valid_text")
         userIput.classList.remove("invalid_text")
     }

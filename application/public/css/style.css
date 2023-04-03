@@ -75,6 +75,13 @@ input[type = "text"]{
   border-radius: 10px;
 }
 
+input[type = "email"]{
+  width: 500px;
+  border: 0px;
+  box-shadow: 0 0 10px 2px rgb(8, 8, 8);
+  border-radius: 10px;
+}
+
 input[type = "password"]{
   width: 500px;
   border: 0px;
