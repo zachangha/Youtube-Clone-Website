@@ -29,6 +29,13 @@
                         <div>
                         <label for="username">Username</label>
                         <input type="text" name="username" id="username" placeholder="Username">
+                            <div class="requirements" id="username_requirements">
+                                <ul>
+                                    <p>Requirements: </p>
+                                    <li>Must begin with a alphabetic character</li>
+                                    <li>Must have 3 or more alphanumeric characters</li>
+                                </ul>
+                            </div>
                         </div>
 
                         <div>
@@ -39,6 +46,15 @@
                         <div class="fillIns">
                         <label for="password">Password</label>
                         <input type="password" name="password" id="password" placeholder="Password">
+                            <div class="requirements" id="password_requirements">
+                                <ul>
+                                    <p>Requirements: </p>
+                                    <li>Must at least 8 characters long</li>
+                                    <li>Must have at least 1 uppercase letter</li>
+                                    <li>Must have at least 1 number</li>
+                                    <li>Must have at least 1 of the following characters: / * - + ! @ # $ ^ & ~ [ ]</li>
+                                </ul>
+                            </div>
                         </div>
 
                         <div>
