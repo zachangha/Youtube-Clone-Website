@@ -24,7 +24,16 @@ document.getElementById("password").addEventListener("click", function(ev){
 })
 
 document.getElementById("email").addEventListener("input", function(ev){
-    
+    let userIput = ev.currentTarget;
+    let email = userIput.value;
+    if(email.match(/[@]/)){
+        userIput.classList.add("valid_text")
+        userIput.classList.remove("invalid_text")
+    }
+    else{
+        userIput.classList.add("invalid_text")
+        userIput.classList.remove("valid_text")
+    }
 })
 
 document.getElementById("password").addEventListener("input", function(ev){
@@ -34,7 +43,7 @@ document.getElementById("password").addEventListener("input", function(ev){
         userIput.classList.add("valid_text")
         userIput.classList.remove("invalid_text")
     }
-    else{
+    else {
         userIput.classList.add("invalid_text")
         userIput.classList.remove("valid_text")
     } 
@@ -54,7 +63,21 @@ document.getElementById("confirm_password").addEventListener("input", function(e
     } 
 });
 
-document.getElementsByTagName('form').addEventListener("submit", function(ev){
-    ev.preventDefault();
-    console.log(ev);
+document.getElementById("submission").addEventListener("submit", function(ev){
+    let username = document.getElementById("username");
+    let password = document.getElementById("password");
+    let confirm_password = document.getElementById("confirm_password");
+    let email = document.getElementById("email");
+    if(username.value === '' || password.value === '' || confirm_password.value === '' || email.value === ''){
+        ev.preventDefault();
+        alert("Please fill in all fields correctly.")
+    }
+    else if(username.classList.contains("invalid_text") || password.classList.contains("invalid_text") || confirm_password.classList.contains("invalid_text") || email.classList.contains("invalid_text")){
+        ev.preventDefault();
+        alert("Please fill in all fields correctly.")
+    }
+    else{
+        ev.currentTarget.submit();
+        console.log(ev);
+    }
 });
