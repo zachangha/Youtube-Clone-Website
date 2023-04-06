@@ -76,6 +76,10 @@ document.getElementById("submission").addEventListener("submit", function(ev){
         ev.preventDefault();
         alert("Please fill in all fields correctly.")
     }
+    else if(password.value != confirm_password.value){
+        ev.preventDefault();
+        alert("Passwords do not match.")
+    }
     else{
         ev.currentTarget.submit();
         console.log(ev);
