@@ -1,3 +1,42 @@
+var url = "https://jsonplaceholder.typicode.com/albums/2/photos";
+
+function buildCard(data){
+    var cardDiv = document.createElement("div");
+    cardDiv.setAttribute("class", "album-card");
+
+    var imgTag = document.createElement("img");
+    imgTag.setAttribute("class", "album-img");
+    imgTag.setAttribute("src", data.url);
+    
+    var titleTag = document.createElement("p");
+    titleTag.setAttribute("class", "album-title")
+    titleTag.textContent = data.title;
+
+    cardDiv.appendChild(imgTag);
+    cardDiv.appendChild(titleTag);
+
+    cardDiv.addEventListener("click", function(ev){
+        console.log(ev.target);
+        console.log(ev.currentTarget);
+    });
+
+    return cardDiv;
+}
+
+async function fetchWithDOMAPI() {
+    try {
+        var response = await fetch(url);
+        var data = await response.json();
+        var elements = data.map(buildCard);
+        document.getElementById("album-list").append(...elements);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+fetchWithDOMAPI();
+
+
 document.getElementById("username").addEventListener("input", function(ev) {
     let userIput = ev.currentTarget;
     let username = userIput.value;

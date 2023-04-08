@@ -225,3 +225,13 @@ iframe{
   border-radius: 20px;
   margin-bottom: 10px;
 }
+
+.album-list{
+  display: flex;
+  text-align: center;
+}
+
+.album-img{
+  height: 100px;
+  width: 100px;
+}
