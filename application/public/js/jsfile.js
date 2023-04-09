@@ -1,5 +1,17 @@
 var url = "https://jsonplaceholder.typicode.com/albums/2/photos";
 
+function fadeOut(ev){
+    var ele = ev.currentTarget
+    ele.classList.add("fade-out")
+        let timer = setInterval(function(){
+            ele.remove();
+            clearInterval(timer);
+            var count = document.getElementById("album-list").childElementCount
+            document.getElementById("total-albums").innerHTML = `<p>${count} Photos</p>`;
+        }, 2900)
+        
+}
+
 function buildCard(data){
     var cardDiv = document.createElement("div");
     cardDiv.setAttribute("class", "album-card");
@@ -15,10 +27,7 @@ function buildCard(data){
     cardDiv.appendChild(imgTag);
     cardDiv.appendChild(titleTag);
 
-    cardDiv.addEventListener("click", function(ev){
-        console.log(ev.target);
-        console.log(ev.currentTarget);
-    });
+    cardDiv.addEventListener("click", fadeOut);
 
     return cardDiv;
 }
@@ -29,6 +38,8 @@ async function fetchWithDOMAPI() {
         var data = await response.json();
         var elements = data.map(buildCard);
         document.getElementById("album-list").append(...elements);
+        var count = document.getElementById("album-list").childElementCount
+        document.getElementById("total-albums").innerHTML = `<p>${count} Photos</p>`;
     } catch (error) {
         console.log(error);
     }
