@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> Register </title>
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <script defer src="../js/registration.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1> CSC 317 Website </h1>
+            <nav>
+                <ul class="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a class="active" href="registration.html">Register</a></li>
+                    <li><a href="postvideo.html">Post Video</a></li>
+                    <li><a href="viewpost.html">View Post</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="bg_image"></div>
+            <div class="wrapper">
+                <div class="content">
+                    
+                    <h2>Registration</h2>
+                    <form id="submission">
+                        <div>
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" placeholder="Username">
+                            <div class="requirements" id="username_requirements">
+                                <ul>
+                                    <p>Requirements: </p>
+                                    <li>Must begin with a alphabetic character</li>
+                                    <li>Must have 3 or more alphanumeric characters</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Email">
+                        </div>
+
+                        <div class="fillIns">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Password">
+                            <div class="requirements" id="password_requirements">
+                                <ul>
+                                    <p>Requirements: </p>
+                                    <li>Must at least 8 characters long</li>
+                                    <li>Must have at least 1 uppercase letter</li>
+                                    <li>Must have at least 1 number</li>
+                                    <li>Must have at least 1 of the following characters: / * - + ! @ # $ ^ & ~ [ ]</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div>
+                        <label for="confirm_password" >Confirm Password</label>
+                        <input type="password" name="confirm_password" id="confirm_password" placeholder="Retype Password">
+                        </div>
+
+                        <div class="checkboxes">
+                        <input type="checkbox" id="validage" name="validage" required>
+                        <label for="validage"> I am 13+ years of age.</label>
+                        </div>
+                        
+                        <div class="checkboxes">
+                        <input type="checkbox" id="TOSandPrivacy" name="TOSandPrivacy" required>
+                        <label for="TOSandPrivacy"> I agree to the<a href="">Terms of Service</a>and<a class="forms" href="">privacy rules</a>.</label>
+                        </div>
+
+                        <div>
+                        <input type="submit" value="Register">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer class="site-footer">
+            Zach S Angha &copy; 2023
+        </footer>
+    </body>
+</html>
