@@ -6,6 +6,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'CSC 317 App', name:"Zacharia S Angha" });
 });
 
+
+
 router.get("/login", function(req,res){
   res.render('login');
 });
