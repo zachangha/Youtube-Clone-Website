@@ -7,9 +7,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title> Home </title>
         <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+
+        {{#each js}}
         <script defer src="/public/js/index.js"></script>
+        <script defer src="/public/js/registration.js"></script>
+        {{/each}}
   </head>
   <body>
+    {{log this}}
     {{> header}}
     {{{body}}}
     {{> footer}}
