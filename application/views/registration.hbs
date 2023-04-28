@@ -4,7 +4,12 @@
     <div class="content">
 
       <h2>Registration</h2>
-      <form id="submission">
+      <form
+        id="submission"
+        action="/users/registration"
+        method="POST"
+        enctype="application/x-www-form-urlencoded"
+      >
         <div>
           <label for="username">Username</label>
           <input
