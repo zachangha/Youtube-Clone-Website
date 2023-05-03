@@ -1,7 +1,13 @@
 <nav>
   <ul class="navbar">
     <li><a href="/">Home</a></li>
-    <li><a href="/login">Login</a></li>
+    {{#if isLoggedIn}}
+      <form action="/users/logout" method="post">
+        <button type="submit">Log out</button>
+      </form>
+    {{else}}
+      <li><a href="/login">Login</a></li>
+    {{/if}}
     <li><a href="/registration">Register</a></li>
     <li><a href="/postvideo">Post Video</a></li>
     <li><a href="/viewpost">View Post</a></li>

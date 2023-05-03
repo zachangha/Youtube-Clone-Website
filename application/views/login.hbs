@@ -3,7 +3,11 @@
   <div class="wrapper">
     <div class="content">
       <h2> Login </h2>
-      <form>
+      <form
+        action="/users/login"
+        method="POST"
+        enctype="application/x-www-form-urlencoded"
+      >
         <div>
           <label for="username">Username</label>
           <input
