@@ -278,3 +278,15 @@ iframe{
   text-align: center;
   font-size: 20px;
 }
+
+.logout{
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  background-color:#4C908D;
+  color: white;
+  font-size: 16px;
+  padding-top: 10px;
+  cursor: pointer;
+}
