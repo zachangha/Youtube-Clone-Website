@@ -2,16 +2,14 @@ var express = require('express');
 var router = express.Router();
 var db = require('../conf/database');
 var bcrypt = require('bcrypt');
+var {isLoggedIn, isMyProfile} = require("../middleware/auth");
+const { isUsernameUnique, usernameCheck, isEmailUnique, emailCheck, tosCheck, ageCheck, passwordCheck} = require('../middleware/validation');
 /* GET localhost:3000.users */
 
-router.post('/registration', async function(req, res, next) {
+router.post('/registration', usernameCheck, emailCheck, passwordCheck, tosCheck, ageCheck, isUsernameUnique, isEmailUnique, async function(req, res, next) {
   var {username, email, password} = req.body;
   try{
-    var [rows, fields] = await db.execute(`select id from users where username=?`, [username]);
-    if(rows && rows.length > 0)
-    {
-      return res.redirect('/registration');
-    }
+
     var [rows, fields] = await db.execute(`select id from users where email=?`, [email]);
     if(rows && rows.length > 0)
     {
@@ -60,7 +58,12 @@ router.post('/login', async function(req, res, next){
   }
 });
 
-router.post("/logout", function(req, res, next){
+router.get("/profile/:id(\\d+)",isLoggedIn ,isMyProfile , function(req,res){
+  console.log(req.params);
+  res.render('profile');
+});
+
+router.post("/logout", isLoggedIn,function(req, res, next){
   req.session.destroy(function(err){
     if(err){
       next(error);
