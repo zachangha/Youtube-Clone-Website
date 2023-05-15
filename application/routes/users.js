@@ -59,7 +59,6 @@ router.post('/login', async function(req, res, next){
 });
 
 router.get("/profile/:id(\\d+)",isLoggedIn ,isMyProfile , function(req,res){
-  console.log(req.params);
   res.render('profile');
 });
 

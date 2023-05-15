@@ -17,6 +17,9 @@
     <div class="header_nav">
     {{> header}}
     {{> nav}}
+    {{#if (nonEmptyObject messages)}}
+      {{> flashmessage this}}
+    {{/if}}
     </div>
     {{{body}}}
     {{> footer}}

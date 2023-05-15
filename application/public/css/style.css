@@ -290,3 +290,21 @@ iframe{
   padding-top: 10px;
   cursor: pointer;
 }
+
+.alert_danger{
+  font-size: 20px;
+  align-content: center;
+  text-align: center;
+  position: absolute;
+  background-color: #f84e4e;
+  padding: 5px;
+}
+
+.alert_success{
+  font-size: 20px;
+  align-content: center;
+  text-align: center;
+  position: absolute;
+  background-color: #51f84e;
+  padding: 5px;
+}
