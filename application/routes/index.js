@@ -18,8 +18,4 @@ router.get("/postvideo",isLoggedIn, function(req,res){
   res.render('postvideo');
 });
 
-router.get("/viewpost", function(req,res){
-  res.render('viewpost');
-});
-
 module.exports = router;
