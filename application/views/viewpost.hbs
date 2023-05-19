@@ -6,12 +6,15 @@
         src="https://i.pinimg.com/736x/d4/4a/d7/d44ad7d54c0b1922a7c2ff5c598b0ab3.jpg"
         alt=""
       />
-      <p> Post Title: Title</p>
-      <p> Created by: Username</p>
-      <p> Posted: Time of creation</p>
+      <p> Post Title: {{currentPost.title}}</p>
+      <p> Created by: {{currentPost.username}}</p>
+      <p> Posted: {{formatDateString currentPost.createdAt}}</p>
+      <p> Description: {{currentPost.description}}</p>
     </div>
     <div class="posts">
-      <iframe src="https://www.youtube.com/embed/ZlYFXCN3cEQ"> </iframe>
+      <video>
+        <source src="/{{currentPost.video}}" type="video/mp4" />
+      </video>
       <section>
         <input
           type="text"
@@ -24,4 +27,5 @@
       </section>
     </div>
   </div>
+  {{log this}}
 </main>

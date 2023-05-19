@@ -139,10 +139,6 @@ h2{
   box-shadow: 0 0 10px 2px rgb(8, 8, 8);
 }
 
-.home_tree{
-  height: 300px;
-}
-
 .box{
   margin: auto;
   width: 600px;
@@ -215,10 +211,10 @@ text-align: center;
   margin: 5px;
 }
 
-iframe{
+video{
   text-align: center;
   width: 700px;
-  height: 300px;
+  height: 450px;
 }
 
 .valid_text{
@@ -246,7 +242,7 @@ iframe{
   gap: 10px;
 }
 
-.album-card{
+.post{
   background-color: #4C908D;
   padding-top: 15px;
   margin: 10px;
@@ -255,14 +251,16 @@ iframe{
   margin-bottom: 10px;
 }
 
-.album-img{
+.thumbnails{
   text-align: center;
   height: 300px;
   width: 300px;
 }
 
-.album-title{
+.postTitle{
   text-align: center;
+  text-decoration: none;
+  color: white;
 }
 
 @keyframes fadeOut {
@@ -307,4 +305,9 @@ iframe{
   position: absolute;
   background-color: #51f84e;
   padding: 5px;
+}
+
+.profile_thumbnails{
+  height: 50px;
+  width: 50px;
 }

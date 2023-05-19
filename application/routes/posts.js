@@ -3,8 +3,7 @@ var router = express.Router();
 var multer = require("multer");
 var db = require("../conf/database");
 const { isLoggedIn } = require("../middleware/auth");
-const { makeThumbnail } = require("../middleware/posts");
-
+const { makeThumbnail, getPostById, GetCommentsForPostById } = require("../middleware/posts");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -28,7 +27,6 @@ router.post(
     var { title, description } = req.body;
     var { path, thumbnail } = req.file;
     var { userID } = req.session.user;
-    console.log(title, description, path, thumbnail, userID);
     try {
       var [insertResult, _] = await db.execute(
         `INSERT INTO posts (title, description, video, thumbnail, fk_userId) VALUE (?,?,?,?,?);`,
@@ -41,7 +39,7 @@ router.post(
           return res.redirect(`/`);
         });
       } else {
-        next(new Error('Post could not be created'));
+        next(new Error("Post could not be created"));
       }
     } catch (error) {
       next(error);
@@ -49,14 +47,30 @@ router.post(
   }
 );
 
-router.get("/:id(\\d+)", function (req, res) {
-  res.render("viewpost", {
-    title: `View Post ${req.params.id}`,
-    js: ["viewpost.js"],
-  });
+router.get("/:id(\\d+)", getPostById, GetCommentsForPostById, function (req, res) {
+  res.render("viewpost");
 });
 
-router.get("/search", function (req, res, next) {});
+router.get("/search", async function (req, res, next) {
+  var { searchValue } = req.query;
+  try {
+    var [rows, _] = await db.execute(
+      `select id,title,thumbnail, concat_ws(' ', title, description) as haystack 
+      from posts
+      having haystack like ?;`,
+      [`%${searchValue}%`]
+    );
+
+    if(rows && rows.length == 0){
+      
+    }else{
+      res.locals.posts = rows;
+      return res.render('index');
+    }
+  }catch(error){
+    next(error);
+  }
+});
 
 router.delete("/delete", function (req, res, next) {});
 

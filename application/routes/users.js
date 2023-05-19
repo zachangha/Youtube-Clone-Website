@@ -3,6 +3,8 @@ var router = express.Router();
 var db = require("../conf/database");
 var bcrypt = require("bcrypt");
 var { isLoggedIn, isMyProfile } = require("../middleware/auth");
+var { getPostsForUserById } = require("../middleware/posts")
+
 const {
   isUsernameUnique,
   usernameCheck,
@@ -82,7 +84,7 @@ router.post("/login", async function (req, res, next) {
   }
 });
 
-router.get("/profile/:id(\\d+)", isLoggedIn, isMyProfile, function (req, res) {
+router.get("/profile/:id(\\d+)", isLoggedIn, isMyProfile, getPostsForUserById, function (req, res) {
   res.render("profile");
 });
 
