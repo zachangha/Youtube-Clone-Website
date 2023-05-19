@@ -72,6 +72,8 @@ router.get("/search", async function (req, res, next) {
   }
 });
 
-router.delete("/delete", function (req, res, next) {});
+router.delete("/delete/:id(\\d+)", function (req, res, next) {
+  
+});
 
 module.exports = router;

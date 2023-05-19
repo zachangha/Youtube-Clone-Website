@@ -311,3 +311,8 @@ video{
   height: 50px;
   width: 50px;
 }
+
+.delete{
+  position: absolute;
+  justify-content: left;
+}
