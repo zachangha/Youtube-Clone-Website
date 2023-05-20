@@ -76,6 +76,7 @@ router.post("/login", async function (req, res, next) {
         };
         return res.redirect("/");
       } else {
+        req.flash("error", `Log In Failed: Invalid username/password`);
         return res.redirect("/login");
       }
     }
