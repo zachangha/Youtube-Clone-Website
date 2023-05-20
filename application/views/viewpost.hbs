@@ -15,17 +15,58 @@
       <video>
         <source src="/{{currentPost.video}}" type="video/mp4" />
       </video>
-      <section>
+      <div class="comment_box" id="comment_box">
         <input
           type="text"
-          name="comment"
-          id="comment"
+          name="comment-text"
+          id="comment-text"
           placeholder="Start typing here..."
         />
-        <input type="submit" value="Comment" />
-        <div class="box"> Comments will go here </div>
-      </section>
+        <input type="submit" id="comment-button" name="comment-button" data-postid="{{currentPost.id}}" value="Comment" />
+        {{#each currentPost.comments}}
+          <p class="comment"> <b>{{this.username}}</b> {{this.text}}</p>
+          <p class="comment_date">{{formatDateString this.cratedAt}}</p>
+        {{/each}}
+      </div>
     </div>
   </div>
-  {{log this}}
+  <script>
+    document.getElementById('comment-button').addEventListener('click', function(ev){
+    let commentText = document.getElementById('comment-text').value;
+    if(!commentText) return;
+    postId = ev.currentTarget.dataset.postid;
+
+    fetch("/comments/create", {
+      method:"POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(
+        {
+          postId: postId,
+          comment: commentText
+        }
+      )
+    })
+    .then(response => {
+      console.log(response)
+      return response.json()
+    })
+    .then(data => {
+      console.log(new Date());
+      console.log(data);
+      var comments = document.getElementById('comment_box')
+      let commentFragment = document.createElement('template');
+      commentFragment.innerHTML = 
+          `<p class="comment"> <b> ${data.username} </b> ${data.comment} </p>
+          <p class="comment_date"> ${(new Date()).toLocaleString(
+            "en-us",{
+              dateStyle: "long",
+              timeStyle: "medium"
+            })} </p>`;
+      comments.append(commentFragment.content.firstChild)
+    })
+    .catch(err => console.log(err));
+    });
+  </script>
 </main>
