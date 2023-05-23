@@ -18,7 +18,8 @@ router.post('/create', isLoggedIn, async function(req, res, next){
                 commentText: comment,
             });
         } else {
-            
+            req.flash("error", "Must be logged in to comment.")
+            res.redirect("login")
         }
     } catch (error) {
         next(error);

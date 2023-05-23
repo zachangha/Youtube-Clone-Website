@@ -23,10 +23,12 @@
           placeholder="Start typing here..."
         />
         <input type="submit" id="comment-button" name="comment-button" data-postid="{{currentPost.id}}" value="Comment" />
-        {{#each currentPost.comments}}
-          <p class="comment"> <b>{{this.username}}</b> {{this.text}}</p>
-          <p class="comment_date">{{formatDateString this.createdAt}}</p>
-        {{/each}}
+        <div id="comment_area">
+          {{#each currentPost.comments}}
+            <p class="comment"> <b>{{this.username}}</b> {{this.text}}</p>
+            <p class="comment_date">{{formatDateString this.createdAt}}</p>
+          {{/each}}
+        </div>
       </div>
     </div>
   </div>
@@ -49,13 +51,11 @@
       )
     })
     .then(response => {
-      console.log(response)
       return response.json()
     })
     .then(data => {
-      console.log(new Date());
-      console.log(data);
-      var comments = document.getElementById('comment_box')
+      location.reload();
+      var comments = document.getElementById('comment_area')
       let commentFragment = document.createElement('template');
       commentFragment.innerHTML = 
           `<p class="comment"> <b> ${data.username} </b> ${data.comment} </p>
@@ -64,7 +64,7 @@
               dateStyle: "long",
               timeStyle: "medium"
             })} </p>`;
-      comments.append(commentFragment.content.firstChild)
+      comments.append(commentFragment.content.firstChild);
     })
     .catch(err => console.log(err));
     });
