@@ -212,8 +212,8 @@ text-align: center;
 }
 
 .profile_thumbnails{
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
   align-items: centers;
 }
 
@@ -225,6 +225,7 @@ video{
   text-align: center;
   width: 700px;
   height: 450px;
+  background-color: black;
 }
 
 .valid_text{

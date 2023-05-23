@@ -1,6 +1,6 @@
 <li>
   <div class="profile_post">
-    <img src="/{{thumbnail}}" alt="thumbnail" class="profile_thumbnails" />
+    <p><a href="/posts/{{id}}"> <img src="/{{thumbnail}}" alt="thumbnail" class="profile_thumbnails"></a></p>
     <a href="/posts/{{id}}" class="postTitle">{{title}}</a>
     <form method="post" action="/posts/delete/{{id}}">
       <button class="delete" type="submit" data-postid="{{id}}">

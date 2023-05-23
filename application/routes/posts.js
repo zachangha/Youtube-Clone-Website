@@ -61,9 +61,10 @@ router.get("/search", async function (req, res, next) {
       having haystack like ?;`,
       [`%${searchValue}%`]
     );
-
+      console.log(rows);
     if(rows && rows.length == 0){
-      
+      req.flash("error", "Could not find video.")
+      res.redirect('/')
     }else{
       res.locals.posts = rows;
       return res.render('index');
