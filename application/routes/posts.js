@@ -4,6 +4,7 @@ var multer = require("multer");
 var db = require("../conf/database");
 const { isLoggedIn } = require("../middleware/auth");
 const { makeThumbnail, getPostById, GetCommentsForPostById } = require("../middleware/posts");
+const flash = require("express-flash");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -72,8 +73,17 @@ router.get("/search", async function (req, res, next) {
   }
 });
 
-router.delete("/delete/:id(\\d+)", function (req, res, next) {
-  
+router.post("/delete/:id(\\d+)", async function (req, res, next) {
+  var {id} = req.params;
+  console.log(id);
+  try {
+    var [deleteComments,_] = await db.execute(`DELETE from comments where fk_postId = ?;`, [id])
+    var [deleteResult,_] = await db.execute(`DELETE from posts where id = ?;`, [id])
+    req.flash("success", "Post deleted.");
+    res.redirect('/');
+  } catch (error) {
+    next(error);
+  }
 });
 
 module.exports = router;

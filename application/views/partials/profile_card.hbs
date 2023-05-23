@@ -4,8 +4,8 @@
       {{thumbnail}}
     </div>
     <a href="/posts/{{id}}" class="postTitle">{{title}}</a>
-    <form action="/posts/delete/{{id}}" method="delete">
-      <button class="delete" type="submit"> Delete </button>
+    <form method="post" action="/posts/delete/{{id}}">
+      <button class="delete" type="submit" data-postid="{{id}}"> Delete </button>
     </form>
   </div>
 </li>
