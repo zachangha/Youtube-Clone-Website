@@ -13,7 +13,6 @@ module.exports = {
         var destinationOfThumbnail = `public/images/uploads/thumbnail-${req.file.filename.split(".")[0]}.png`;
         var thumbnailCommand = `${pathToFFMPEG} -ss 00:00:01 -i ${req.file.path} -y -s 200x200 -vframes 1 -f image2 ${destinationOfThumbnail}`;
         exec(thumbnailCommand);
-        console.log(exec);
         req.file.thumbnail = destinationOfThumbnail;
         next();
       } catch (error) {

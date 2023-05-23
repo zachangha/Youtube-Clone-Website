@@ -52,28 +52,6 @@ router.get("/:id(\\d+)", getPostById, GetCommentsForPostById, function (req, res
   res.render("viewpost");
 });
 
-router.get("/search", async function (req, res, next) {
-  var { searchValue } = req.query;
-  try {
-    var [rows, _] = await db.execute(
-      `select id,title,thumbnail, concat_ws(' ', title, description) as haystack 
-      from posts
-      having haystack like ?;`,
-      [`%${searchValue}%`]
-    );
-      console.log(rows);
-    if(rows && rows.length == 0){
-      req.flash("error", "Could not find video.")
-      res.redirect('/')
-    }else{
-      res.locals.posts = rows;
-      return res.render('index');
-    }
-  }catch(error){
-    next(error);
-  }
-});
-
 router.post("/delete/:id(\\d+)", async function (req, res, next) {
   var {id} = req.params;
   console.log(id);
