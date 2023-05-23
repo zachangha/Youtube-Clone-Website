@@ -199,16 +199,26 @@ text-align: center;
 }
 
 .profileposts{
-  padding: 10px;
-  background-color: #4C908D;
   list-style: none;
+  padding: 10px;
+  margin: 5px;
+}
+
+.profile_post{
+  padding: 50px;
+  margin: 10px;
+  background-color: #525252;
   border-radius: 20px;
 }
 
-.profileposts li{
-  padding: 3px;
-  background-color: #525252;
-  margin: 5px;
+.profile_thumbnails{
+  height: 150px;
+  width: 150px;
+  align-items: centers;
+}
+
+.delete{
+  justify-content: left;
 }
 
 video{
@@ -249,6 +259,7 @@ video{
   background-color: #4C908D;
   border-radius: 20px;
   margin-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .thumbnails{
@@ -270,11 +281,6 @@ video{
 
 .fade-out{
   animation: fadeOut 3s;
-}
-
-.total-albums{
-  text-align: center;
-  font-size: 20px;
 }
 
 .logout{
@@ -305,15 +311,6 @@ video{
   position: absolute;
   background-color: #51f84e;
   padding: 5px;
-}
-
-.profile_thumbnails{
-  height: 50px;
-  width: 50px;
-}
-
-.delete{
-  justify-content: left;
 }
 
 .comment_box{

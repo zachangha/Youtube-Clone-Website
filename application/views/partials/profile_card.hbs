@@ -1,11 +1,11 @@
 <li>
-  <div class="profileposts">
-    <div class="profile_thumbnails">
-      <img src="{{thumbnail}}" alt="thumbnail">
-    </div>
+  <div class="profile_post">
+    <img src="/{{thumbnail}}" alt="thumbnail" class="profile_thumbnails" />
     <a href="/posts/{{id}}" class="postTitle">{{title}}</a>
     <form method="post" action="/posts/delete/{{id}}">
-      <button class="delete" type="submit" data-postid="{{id}}"> Delete </button>
+      <button class="delete" type="submit" data-postid="{{id}}">
+        Delete
+      </button>
     </form>
   </div>
 </li>
