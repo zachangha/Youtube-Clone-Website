@@ -26,6 +26,7 @@ Please follow the instructions below and fill in the information requested when 
     DB_USER="root"
     DB_PASSWORD="1234"
     PORT=3000
+3. Type "npm run builddb" in Powershell
 
 ## Run Instructions
 1. Type "npm start" in Powershell
