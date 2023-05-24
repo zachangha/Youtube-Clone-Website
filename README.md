@@ -20,6 +20,13 @@ Please follow the instructions below and fill in the information requested when 
 
 ## Build Instructions
 1. Type "npm install" in Powershell
+2. Fill .env with:
+    DB_HOST="localhost"
+    DB_NAME="csc317db"
+    DB_USER="root"
+    DB_PASSWORD="1234"
+    PORT=3000
 
 ## Run Instructions
 1. Type "npm start" in Powershell
+2. Open browser and type localhost:3000
