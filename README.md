@@ -19,7 +19,7 @@ Please follow the instructions below and fill in the information requested when 
 # Build/Run Instructions
 
 ## Build Instructions
-1. npm install
+1. Type "npm install" in Powershell
 
 ## Run Instructions
-1. npm start
+1. Type "npm start" in Powershell
