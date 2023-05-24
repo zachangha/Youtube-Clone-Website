@@ -19,14 +19,14 @@ Please follow the instructions below and fill in the information requested when 
 # Build/Run Instructions
 
 ## Build Instructions
-1. Type "npm install" in Powershell
-2. Fill .env with:
-    DB_HOST="localhost"
-    DB_NAME="csc317db"
-    DB_USER="root"
-    DB_PASSWORD="1234"
-    PORT=3000
-3. Type "npm run builddb" in Powershell
+1. Creat .env file in application with the following values:
+    DB_HOST= Database host
+    DB_NAME= Database name
+    DB_USER= Database username
+    DB_PASSWORD= Database password
+    PORT= Port number
+2. Get to applications folder
+3. Type "npm install" in Powershell
 
 ## Run Instructions
 1. Type "npm start" in Powershell
