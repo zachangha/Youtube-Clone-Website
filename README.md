@@ -6,18 +6,6 @@ The purpose of this repository is to store all the code for your web application
 
 Please follow the instructions below and fill in the information requested when prompted.
 
-## Student Information
-
-|               | Information   |
-|:-------------:|:-------------:|
-| Student Name  | Zacharia Angha     |
-| Student ID    | 922988765       |
-| Student Email | zangha@sfsu.edu    |
-
-
-
-# Build/Run Instructions
-
 ## Build Instructions
 1. Creat .env file in application with the following values:
     DB_HOST= Database host
